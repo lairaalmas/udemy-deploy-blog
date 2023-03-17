@@ -9,3 +9,7 @@ Guided project developed during the course [React - The Complete Guide (incl Hoo
 ## Technologies:
 
 - Lazy loading
+  - `loader: () => import("myPath").then((module) => module.myFunction())`
+  - `lazy` + `Suspense`
+    - `const MyComponent = lazy(() => import("myPath"))`
+    - `element: <Suspense><MyComponent/></Suspense>`
