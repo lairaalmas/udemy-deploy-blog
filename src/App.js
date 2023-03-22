@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/Home";
 import RootLayout from "./pages/Root";
 
-// for component
+// for components pt 1
 const BlogPage = lazy(() => import("./pages/Blog"));
 const PostPage = lazy(() => import("./pages/Post"));
 
@@ -22,12 +22,13 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
+            // for contents pt 2
             element: (
               <Suspense fallback={<p>Loading...</p>}>
                 <BlogPage />
               </Suspense>
             ),
-            // for function
+            // for functions without args
             loader: () =>
               import("./pages/Blog").then((module) => module.loader()),
           },
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
                 <PostPage />
               </Suspense>
             ),
+            // for functions with args
             loader: ({ params }) =>
               import("./pages/Post").then((module) =>
                 module.loader({ params })
