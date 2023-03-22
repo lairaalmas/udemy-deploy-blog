@@ -2,7 +2,6 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HomePage from "./pages/Home";
-// import PostPage, { loader as postLoader } from "./pages/Post";
 import RootLayout from "./pages/Root";
 
 // for component
